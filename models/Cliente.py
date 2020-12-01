@@ -3,19 +3,24 @@ import json
 import requests
 from Utils.Constantes import Constantes as const
 from Utils.MessagesExceptions import Messages as msg
+
 class Cliente:
     
     def getJson(self,symbol):
 
         try:
             response = requests.request('GET',const.getURL() ,params = const.getParams(symbol))
-        except Exception as e:
+        except:
             return msg.msgError500
 
         if(response.status_code == 200):
-            return response.json()
+            return ProcessData.processData(self,response.json())    
         else:
             return msg.msgError404
 
-    def normaliseData():
-        pass
+class ProcessData:
+    def processData(self,data):
+        return data['Time Series (60min)']
+
+
+    
