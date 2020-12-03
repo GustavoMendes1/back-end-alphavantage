@@ -1,5 +1,8 @@
+import dotenv
+import os
+import sys
 
-class Constantes:
+class Constants:
     
     def getParams(symbol):
         return  {'function': 'TIME_SERIES_INTRADAY',
@@ -9,3 +12,4 @@ class Constantes:
         
     def getURL():
         return 'https://www.alphavantage.co/query'
+       
