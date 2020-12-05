@@ -7,12 +7,12 @@ class ProcessData:
         newJson = []
         for date in data:
             newJson.append({
-                'data': date.split(' ')[0],
-                'hora': date.split(' ')[1],
-                'valor': data[date]['4. close']
+                'date': date.split(' ')[0],
+                'hour': date.split(' ')[1],
+                'points': data[date]['4. close']
             })
 
-        return {'Valores':newJson}
+        return {'TimeSeries':newJson}
 
     def getTimeSeries(self,data):
-        return data['Time Series (60min)']
+        return data['Time Series (5min)']
