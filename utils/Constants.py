@@ -1,10 +1,10 @@
 
 class Constants:
     
-    def getParams(symbol):
+    def getParams(symbol, interval):
         return  {'function': 'TIME_SERIES_INTRADAY',
                     'symbol': symbol,
-                    'interval': '5min',
+                    'interval': interval,
                     'apikey': 'YAW95V1UKDSBYXKX'}
         
     def getURL():

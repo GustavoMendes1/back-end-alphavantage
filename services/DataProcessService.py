@@ -2,22 +2,26 @@ from Utils.MessagesExceptions import Messages as msg
 import re
 class ProcessData:
     
-    def processData(self,data):
+    def processData(self,data,interval):
         try:
-            data = ProcessData.getTimeSeries(self,data)
+            data = ProcessData.getTimeSeries(self,data,interval)
         except:
             return msg.msgError404
 
         newJson = []
-        for date in data:
-            dateTime = re.findall("[0-9]{2}:[0-9]{2}", date)[0] \
-            +" "+re.findall("[0-9]{2}-[0-9]{2}", date)[0]
+        for position in data:
+            time = (re.findall("[0-9]{2}:[0-9]{2}", position)[0])
+            date = (re.findall("[0-9]{2}-[0-9]{2} ", position)[0])
+            date = date.replace("-", "/")
+            
+            dateTime = time +" "+ date
+            
             newJson.append({
                 'dateTime':dateTime,
-                'points': data[date]['4. close']
+                'points': data[position]['4. close']
             })
 
         return {'data':newJson}
 
-    def getTimeSeries(self,data):
-        return data['Time Series (5min)']
+    def getTimeSeries(self,data,interval):
+        return data['Time Series ('+interval+')']
