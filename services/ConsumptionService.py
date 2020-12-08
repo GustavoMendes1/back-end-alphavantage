@@ -9,13 +9,20 @@ class Consumption:
     
     def getJson(self,symbol,interval):
         try:
-            response = requests.request('GET',const.getURL() ,params = const.getParams(symbol,interval))
+            if interval is None:
+                params = const.getParamsBovespa(symbol)
+            else:
+                 params = const.getParamsCompanies(symbol,interval)
+
+            response = requests.request('GET', const.getURL(), params=params)
             
         except:
             return msg.msgError500
         
         if(response.status_code == 200):
-            return ProcessData.processData(self,response.json(),interval)    
+            return ProcessData.processData(self, response.json(), interval)    
         else:
             return msg.msgError404
+    
+    
 

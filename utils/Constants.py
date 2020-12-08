@@ -1,7 +1,7 @@
 
 class Constants:
     
-    def getParams(symbol, interval):
+    def getParamsCompanies(symbol, interval):
         return  {'function': 'TIME_SERIES_INTRADAY',
                     'symbol': symbol,
                     'interval': interval,
@@ -9,4 +9,11 @@ class Constants:
         
     def getURL():
         return 'https://www.alphavantage.co/query'
+
+    def getParamsBovespa(symbol):
+        return  {'function': 'TIME_SERIES_DAILY',
+                    'symbol': symbol,
+                    'apikey': 'YAW95V1UKDSBYXKX'}
+    
+  
        

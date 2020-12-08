@@ -24,4 +24,8 @@ class ProcessData:
         return {'data':newJson}
 
     def getTimeSeries(self,data,interval):
-        return data['Time Series ('+interval+')']
+        if interval is None:
+            return data['Time Series (Daily)']
+        else:
+            return data['Time Series ('+interval+')']
+        
