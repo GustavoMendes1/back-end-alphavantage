@@ -9,6 +9,8 @@ class ProcessData:
             time = (re.findall("[0-9]{2}:[0-9]{2}", position)[0])
             date = (re.findall("[0-9]{2}-[0-9]{2} ", position)[0])
             date = date.replace("-", "/")
+            date = date[:5]
+            date= ProcessData.reverseDate(self,date)
             dateTime = time +" "+ date
             
             newJson.append({
@@ -24,7 +26,7 @@ class ProcessData:
             date = (re.findall("-[0-9]{2}-[0-9]{2}", position)[0])
             date = date.replace("-", "/")
             date = date[1:]
-
+            date= ProcessData.reverseDate(self,date)
             newJson.append({
                 'dateTime':date,
                 'points': data[position]['4. close']
@@ -32,11 +34,16 @@ class ProcessData:
 
         return {'data':newJson}
     
+    def reverseDate(self,date):
+        dateaux = date.split("/")
+        date=dateaux[1]+ "/" + dateaux[0]
+        return date
+
     def getTimeSeries(self,data,interval):
-        try:
-            if interval is None:
-                return ProcessData.processDataBovespa(self,data['Time Series (Daily)'])
-            else:
-                return ProcessData.processDataCompany(self,data['Time Series ('+interval+')'])
-        except:
-            return msg.msgError404
+        #try:
+        if interval is None:
+            return ProcessData.processDataBovespa(self,data['Time Series (Daily)'])
+        else:
+            return ProcessData.processDataCompany(self,data['Time Series ('+interval+')'])
+        #except:
+        #    return msg.msgError404
