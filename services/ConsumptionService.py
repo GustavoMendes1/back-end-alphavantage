@@ -1,8 +1,8 @@
 from flask import Flask
 import json
 import requests
-from Utils.Constants import Constants as const
-from Utils.MessagesExceptions import Messages as msg
+from utils.Constants import Constants as const
+from utils.MessagesExceptions import Messages as msg
 from services.DataProcessService import ProcessData
 
 class Consumption:
