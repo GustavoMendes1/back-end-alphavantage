@@ -24,7 +24,7 @@ virtualenv ambvir
 pip install -r requirements.txt
 cd ambvir/Scripts
 activate.bat
-Na raiz do projeto: python app.py
+Na pasta back-end-alphavantage: python app.py
 ```
 # Testes
 ```shell
