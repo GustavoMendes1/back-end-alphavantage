@@ -20,7 +20,8 @@ class Consumption:
             return msg.msgError500
         
         if(response.status_code == 200):
-            return ProcessData.processData(self, response.json(), interval)    
+            
+            return ProcessData.getTimeSeries(self, response.json(), interval)    
         else:
             return msg.msgError404
     

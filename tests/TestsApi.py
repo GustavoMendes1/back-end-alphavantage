@@ -8,9 +8,13 @@ def test_getBovespa():
     assert response.status_code == 200
 
 def test_getVale():
-    response = requests.request('GET',baseURL+'VALE')
+    response = requests.request('GET',baseURL+'VALE/5min')
     assert response.status_code == 200
 
 def test_getValueNotFound():
-    response = requests.request('GET',baseURL+'123')
+    response = requests.request('GET',baseURL+'123/1min')
+    assert response.status_code == 404
+
+def test_getValueNotFoundBovespa():
+    response = requests.request('GET',baseURL+'VALE/2min')
     assert response.status_code == 404
