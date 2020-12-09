@@ -32,4 +32,4 @@ pytest TestsApi.py
 ```
 # Observações
 - Foi implementada uma requisição GET para pontuação da Bovespa na rota http://127.0.0.1:5000/
-- Foi implementada uma requisição GET para pontuação de empresas em um determinado intervalo de tempo na rota http://127.0.0.1:5000/Empresa/Intervalo
+- Foi implementada uma requisição GET para pontuação de empresas em um determinado intervalo de tempo na rota de exemplo: http://127.0.0.1:5000/IBM/5min
