@@ -13,14 +13,11 @@ class Consumption:
                 params = const.getParamsBovespa(symbol)
             else:
                  params = const.getParamsCompanies(symbol,interval)
-
-            response = requests.request('GET', const.getURL(), params=params)
-            
+            response = requests.request('GET', const.getURL(), params=params)   
         except:
             return msg.msgError500
         
-        if(response.status_code == 200):
-            
+        if(response.status_code == 200):       
             return ProcessData.getTimeSeries(self, response.json(), interval)    
         else:
             return msg.msgError404
