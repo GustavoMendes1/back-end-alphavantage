@@ -17,14 +17,14 @@ Este projeto consiste em uma API que retorna os valores da Bovespa e de empresas
 ## Windows
 
 ```shell
-cd back-end
+cd back-end-alphavantage
 git clone https://github.com/GustavoMendes1/back-end-alphavantage.git
 pip install virtualenv
 virtualenv ambvir
 pip install -r requirements.txt
 cd ambvir/Scripts
 activate.bat
-cd ../../python app.py
+Na raiz do projeto: python app.py
 ```
 # Testes
 ```shell
