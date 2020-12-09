@@ -40,10 +40,10 @@ class ProcessData:
         return date
 
     def getTimeSeries(self,data,interval):
-        #try:
-        if interval is None:
-            return ProcessData.processDataBovespa(self,data['Time Series (Daily)'])
-        else:
-            return ProcessData.processDataCompany(self,data['Time Series ('+interval+')'])
-        #except:
-        #    return msg.msgError404
+        try:
+            if interval is None:
+                return ProcessData.processDataBovespa(self,data['Time Series (Daily)'])
+            else:
+                return ProcessData.processDataCompany(self,data['Time Series ('+interval+')'])
+        except:
+            return msg.msgError404
