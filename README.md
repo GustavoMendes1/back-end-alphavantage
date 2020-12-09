@@ -30,3 +30,6 @@ cd ../../python app.py
 ```shell
 pytest TestsApi.py
 ```
+# Observações
+- Foi implementada uma requisição GET para pontuação da Bovespa na rota http://127.0.0.1:5000/
+- Foi implementada uma requisição GET para pontuação de empresas em um determinado intervalo de tempo na rota http://127.0.0.1:5000/Empresa/Intervalo
