@@ -1,8 +1,8 @@
-#Desafio Pontotel - Back-End
-##Objetivo:
+# Desafio Pontotel - Back-End
+## Objetivo:
 Este projeto consiste em uma API que retorna os valores da Bovespa e de empresas no mercado de ações, possuindo como fonte de dados a API disponibilizada pela https://www.alphavantage.co/. 
 
-#Tecnologias
+# Tecnologias
 - [Python](https://www.python.org/downloads/)
 - [Visual Studio Code](https://code.visualstudio.com/)
 - [Pytest](https://docs.pytest.org/en/stable/)
@@ -10,11 +10,11 @@ Este projeto consiste em uma API que retorna os valores da Bovespa e de empresas
 - [Regex](https://docs.python.org/pt-br/3.8/howto/regex.html)
 - [Requests](https://requests.readthedocs.io/en/master/)
 
-#Requisitos
+# Requisitos
 - [Python >= 3.8](https://www.python.org/downloads/)
 
-#Instalação
-##Windows
+# Instalação
+## Windows
 
 ```shell
 cd back-end
@@ -26,7 +26,7 @@ cd ambvir/Scripts
 activate.bat
 cd ../../python app.py
 ```
-#Testes
+# Testes
 ```shell
 pytest TestsApi.py
 ```
