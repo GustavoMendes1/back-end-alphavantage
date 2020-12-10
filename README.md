@@ -21,9 +21,9 @@ git clone https://github.com/GustavoMendes1/back-end-alphavantage.git
 cd back-end-alphavantage
 pip install virtualenv
 virtualenv ambvir
-pip install -r requirements.txt
 cd ambvir/Scripts
 activate.bat
+pip install -r requirements.txt
 Na pasta back-end-alphavantage: python app.py
 ```
 # Testes
